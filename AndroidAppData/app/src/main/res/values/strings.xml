@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidAppData</string>
+    <string name="imagen">Imagen</string>
+    <string name="name">Name</string>
+    <string name="entre_su_nombre">Entre su nombre</string>
+    <string name="button">Actualizar</string>
+    <string name="data_change">Data change</string>
+    <string name="make_sure">¿Estas seguro?</string>
+</resources>

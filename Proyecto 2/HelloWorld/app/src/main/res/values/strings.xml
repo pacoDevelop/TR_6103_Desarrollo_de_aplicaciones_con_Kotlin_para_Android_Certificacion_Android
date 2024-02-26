@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="title_text">Hole Android</string>
+    <string name="title_buttom">Boton</string>
+    <string name="data1">texto</string>
+    <string name="data2">Accion1</string>
+    <string name="data3">Accion 2</string>
+    <string name="obtener_dato">Obtener dato</string>
+    <string name="obtener_dato_b">Obtener dato</string>
+    <string name="button">Button</string>
+    <string name="button_b">Button</string>
+    <string name="button_c">Button</string>
+</resources>

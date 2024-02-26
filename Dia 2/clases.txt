@@ -1,0 +1,25 @@
+class Persona(val nombre:String,var esEstudiante:Boolean)
+
+class Rectangulo(val alto: Int, val ancho: Int){
+    val isCuadrado: Boolean
+//     	get() {
+//             return alto==ancho
+//         }
+        get()=alto==ancho
+        
+}
+
+fun main(args:Array<String>) {
+    val jaime=Persona("Jaime",true)//instanciarA
+    val maria=Persona("Maria",true)//instanciar
+    val luis=Persona("Luis",false)//instanciar
+    
+    println("Nombre del estudiante: ${jaime.nombre}")
+// 	jaime.nombre="Pedro" Esto daria erro poruqe es val
+jaime.esEstudiante=false //esto al ser var se puede
+    
+       println("Nombre del estudiante: ${jaime.esEstudiante}")
+	val rectangulo1=Rectangulo(1,1)
+    println(rectangulo1.isCuadrado)
+
+}

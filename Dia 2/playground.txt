@@ -1,0 +1,117 @@
+import java.io.BufferedReader
+import java.io.StringReader
+
+// fun max(a:Int, b:Int) {
+//     return if (a > b) a else b
+// }
+
+// fun max(a:Int, b:Int) =  if (a > b) a else b
+fun isLetter(c:Char)=c in 'a'..'z' || c in 'A' .. 'Z'
+// fun isNotDigit(c:Char)=!(c in '0'..'9')
+fun isNotDigit(c:Char)=c !in '0'..'9'
+fun recognize(c: Char)=when (c){
+    in '0' .. '9' ->"Es un dígito"
+    in 'a' .. 'z', in 'A' .. 'Z' -> "Es una letra" 
+    else -> "Ni idea"
+}
+
+fun fizzBuzz(i: Int) = when {
+    i % 15 == 0 -> "FizzBuzz "
+    i % 3 == 0 -> "Fizz "
+    i % 5 == 0 -> "Buzz "
+    else -> "$i "
+}
+
+//Colleciones
+
+val lista2 = listOf(1,7,34)
+val conjunto = setOf(1,7,56,7)
+val diccionario =mapOf(1 to "one", 7 to "seven", 56 to "fifty-six")//pares compuestos por una clave
+
+fun calcular(vararg items: Int): Int = items.last() + 1
+
+// fun readNumber(reader: BufferedReader): Int? {
+//     try{
+//      val linea = reader.readLine()
+//     return Integer.parseInt(linea)   
+//     }catch(e:NumberFormatException){
+//         return null
+//     }finally{
+//         println("Cerrando buffer")
+//         reader.close()
+//     }
+    
+// }
+
+fun readNumber(reader: BufferedReader) {
+    val numero=try{
+    Integer.parseInt(reader.readLine())   
+    }catch(e:NumberFormatException){
+        null
+//         return
+    }
+    println(numero)
+}
+fun main() {
+// 	println(max(2, 2))
+//     val input: String = "  "
+//     val name: String? = if ( input.isNotEmpty()) input else "Sin dato"
+// 	println("Data $name");
+//     for (i in 1..100){
+//         println(fizzBuzz(i))
+//     }
+    
+    
+//     for (i in 100 downTo(1)){
+//         println(fizzBuzz(i))
+//     }
+    
+//      for (i in 100 downTo 1){
+//         println(fizzBuzz(i))
+//     }
+
+//   for (i in 100 downTo 1 step 2){
+//         println(fizzBuzz(i))
+//     }
+
+//   for (i in 100 downTo(1) step 2){
+//         println(fizzBuzz(i))
+//     }
+val lista =listOf("10","11","1001")
+
+// for (e in lista){
+//         println(fizzBuzz(Integer.parseInt(e)))
+//     }
+for ((index,e) in lista.withIndex()){
+        println("${index+2} ${fizzBuzz(Integer.parseInt(e))}")
+    }
+println(isLetter('A'))
+println(isNotDigit('A'))
+println(recognize('·'))
+println(recognize('2'))
+println(recognize('A'))
+
+
+	val resultadoSuma= lista2.sum()
+    
+ 	println("Resultado : $resultadoSuma")
+	
+    val resultadoSumaConjunto= conjunto.sum();
+    
+     	println("Resultado conjunto : $resultadoSumaConjunto")
+        
+    val nombres= listOf("Juan","Maria","Luis")
+    
+    println(nombres.last())
+    
+    println(calcular(1,2,3,4))
+    println(calcular(*listOf(1,2,3,4).toIntArray()))
+    
+    val valores ="12.456-5.A".split("-",".")
+    
+    println(valores.first())
+    
+    val reader= BufferedReader(StringReader("a"))
+//     println(readNumber(reader))
+	readNumber(reader)
+}

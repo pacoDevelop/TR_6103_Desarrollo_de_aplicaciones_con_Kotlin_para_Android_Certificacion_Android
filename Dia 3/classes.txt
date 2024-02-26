@@ -1,0 +1,116 @@
+class User(val id:Int, val name:String, var address:String){
+    
+}
+
+// fun saveUser(user:User){
+//     if(user.name.isEmpty()){
+//       throw IllegalArgumentException("El nombre de usuario ${user.name} no puede estar vacío")  
+//     }
+    
+//     if(user.address.isEmpty()){
+//       throw IllegalArgumentException("La dirección de usuario ${user.address} no puede estar vacío")    
+//     }
+    
+//     println("Usuario ${user.id} guardado.")
+// }
+
+// fun saveUser(user:User){
+    
+//     fun validate(user:User,_value:String,nameField:String){
+//         if(_value.isEmpty()){
+//             throw IllegalArgumentException("Para el usuario ${user.id} el campo ${nameField} no puede estar vacío.")
+//         }
+//     }
+    
+//     validate(user,user.name,"name")
+//     validate(user,user.address,"address")
+// }
+
+// fun main() {
+//     try{
+//         saveUser(User(1,"Paco",""))
+//     }catch (e:IllegalArgumentException){
+//         println("ERROR ${e.message}");
+//     }
+//     val user=User(1,"pepe","test")
+//     println("${user.id} ${user.name} ${user.address}")
+// }
+
+//extension functions
+// fun User.validateSave(){
+//     fun validate(_value:String,nameField:String){
+//           	if(_value.isEmpty()){
+//             	throw IllegalArgumentException("Para el usuario $id el campo $nameField no puede estar vacío.")
+//         }
+//     }
+//     validate(name,"name")
+//     validate(address,"address")
+//    	//save user
+//     println("User con $id guardado.")
+// }
+
+// fun saveUser(user:User){
+//     user.validateSave();
+// }
+
+// fun main() {
+//     saveUser(User(1,"a",""))
+    
+// }
+
+// class User2(val name:String){
+//    var address: String = "sin dato" 
+//     set(valor:String){
+        
+//         if(valor.isEmpty()){
+//             throw IllegalArgumentException("El campo addres no puede estar vacío")
+//         }
+//         println("""
+//         Addres para el user $name ha cambiado de "$field" ->"$valor"
+//         """.trimIndent())
+//         field=valor
+//     }
+// }
+
+// fun main() {
+//     val user2=User2("Martina")
+//     println(user2.address)
+//     try{
+//         user2.address=""
+//     }catch(e:IllegalArgumentException){
+//         println("${e.message}")
+//     }
+    
+//     user2.address="Gran via 80"
+//     println(user2.address)
+// }
+
+// data class Cliente(val nombre:String,val codigoPostal: Int){
+    
+// }
+
+// fun main(){
+//     val cJuan=Cliente("Juan",90)
+//     val cMaria= cJuan.copy(nombre="Maria")
+    
+//     println("Cliente Juan: ${cJuan.nombre}")
+//     println("Cliente Juan: ${cJuan.codigoPostal}")
+//     println("Cliente Maria: ${cMaria.nombre}")
+//     println("Cliente Maria: ${cMaria.codigoPostal}")
+    
+//     //objecto1+ eventos -> estado cambia -> objeto1'
+    
+//     clienteJuanCambioSede=cJuan.copy(codigoPostal=100)
+// }
+
+class Data{
+   companion object{
+       fun calcular():Int{
+           return 1
+       }
+   } 
+}
+
+fun main(){
+    println(Data.calcular())
+}
