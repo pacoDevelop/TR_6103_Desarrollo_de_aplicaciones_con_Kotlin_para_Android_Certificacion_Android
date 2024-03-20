@@ -8,6 +8,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
+import com.rja.mapsapp.models.GoogleGeoResults
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -24,26 +25,27 @@ class SearchViewModel: ViewModel() {
     var show by mutableStateOf(false)
         private set
 
-    fun getLocation(search: String){
+    fun getLocation(search: String) {
         viewModelScope.launch {
-            val apikey = "TU API KEY"
+            val apikey = "AIzaSyAvczVc95GFcfM2aTADV9Y8cfRsbsuMxfA"
 
-            val url =  "https://maps.googleapis.com/maps/api/geocode/json?address=$search&key=$apikey"
-            val response = withContext(Dispatchers.IO){
+            val url =
+                "https://maps.googleapis.com/maps/api/geocode/json?address=$search&key=$apikey"
+            val response = withContext(Dispatchers.IO) {
                 URL(url).readText()
             }
 
             val results = Gson().fromJson(response, GoogleGeoResults::class.java)
 
-            if (results.results.isNotEmpty()){
+            if (results.results.isNotEmpty()) {
                 show = true
                 lat = results.results[0].geometry.location.lat
                 long = results.results[0].geometry.location.lng
                 address = results.results[0].formatted_address
-            }else {
-                Log.d("Fail","No funciona")
+            } else {
+                Log.d("Fail", "No funciona")
             }
 
         }
-
+    }
 }
